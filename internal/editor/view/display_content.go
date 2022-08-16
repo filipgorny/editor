@@ -23,5 +23,15 @@ func (d *DisplayContent) Write(i int, s string) {
 }
 
 func (d *DisplayContent) Get(x int, y int) rune {
-	return rune(d.lines[y][x])
+	if y >= len(d.lines) {
+		return ' '
+	}
+
+	line := d.lines[y]
+
+	if x >= len(line) {
+		return ' '
+	}
+
+	return rune(line[x])
 }

@@ -1,6 +1,8 @@
 package window
 
 import (
+	"fmt"
+
 	"github.com/filipgorny/editor/internal/editor/buffer"
 	"github.com/filipgorny/editor/internal/editor/view"
 	"github.com/filipgorny/editor/internal/types"
@@ -29,6 +31,7 @@ func (w *Window) Rect() *types.Rect {
 }
 
 func (w *Window) DisplayContent() *view.DisplayContent {
+	fmt.Println("window.go: DisplayContent()")
 	dc := view.NewDisplayContent(w.Rect().Width(), w.Rect().Height())
 
 	for i := 0; i < w.Rect().Height(); i++ {

@@ -1,4 +1,4 @@
-package render
+package driver
 
 import (
 	"github.com/filipgorny/editor/internal/editor/view"
@@ -10,4 +10,6 @@ type Renderer interface {
 	SetContent(x, y int, ch rune)
 	Display(rect types.Rect, content *view.DisplayContent)
 	MaxRect() *types.Rect
+	Sync()
+	Stop()
 }
